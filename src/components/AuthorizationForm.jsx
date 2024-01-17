@@ -4,6 +4,7 @@ import { useState } from "react";
 const AuthorizationForm = () => {
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const handleInputChange = (identifier, value) => {
     if (identifier === "email") {
@@ -13,14 +14,23 @@ const AuthorizationForm = () => {
     }
   };
 
+  const handleLogin = () => {
+    setSubmitted(true);
+  };
+
+  const emailNotValid =
+    submitted && !enteredEmail.includes("^[w-.]+@([w-]+.)+[w-]{2,4}$");
+  const passwordNotValid = submitted && enteredPassword.trim().length < 6;
+
   return (
-    <div>
-      <div>
+    <div id="auth-inputs">
+      <div className="controls">
         <p>
           <label htmlFor="">Email</label>
           <input
             type="email"
             onChange={(event) => handleInputChange("email", event.target.value)}
+            className={emailNotValid ? "invalid" : undefined}
           />
         </p>
         <p>
@@ -30,12 +40,17 @@ const AuthorizationForm = () => {
             onChange={(event) => {
               handleInputChange("password", event.target.value);
             }}
+            className={passwordNotValid ? "invalid" : undefined}
           />
         </p>
       </div>
-      <div>
-        <button type="button"> Create a new account</button>
-        <button>Sign In </button>
+      <div className="actions">
+        <button type="button" className="text-button">
+          Create a new account
+        </button>
+        <button onClick={handleLogin} className="button">
+          Sign In{" "}
+        </button>
       </div>
     </div>
   );
