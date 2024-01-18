@@ -1,12 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: aliceblue;
+  /* color: aliceblue; */
   --text-color: #e2e5f2;
   --main-gradient: radial-gradient(
     circle at 10% 20%,
@@ -38,7 +41,7 @@ button:focus {
   outline: none;
 }
 
-#auth-inputs {
+/* #auth-inputs {
   width: 100%;
   max-width: 28rem;
   padding: 2rem;
@@ -47,19 +50,19 @@ button:focus {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   background: linear-gradient(180deg, #474232 0%, #28271c 100%);
   color: white;
-}
+} */
 
-.actions {
+/* .actions {
   display: flex;
   justify-content: flex-end;
   gap: 1rem;
-}
+} */
 
-.text-button {
+/* .text-button {
   color: rgb(50, 150, 250);
   border: none;
 }
 
 .text-button:hover {
   color: #e2e5f2;
-}
+} */
